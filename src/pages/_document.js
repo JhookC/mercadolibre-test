@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from "next/document"
 
 class AppDocument extends Document {
   static async getInitialProps(ctx) {
@@ -11,8 +11,8 @@ class AppDocument extends Document {
       <Html lang="en">
         <Head>
           <title>React boilerplate</title>
-          <meta name="description" content="React SSR boilerplate"></meta>
-          <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+          <meta name="description" content="React SSR boilerplate" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
         <body>
           <Main />
