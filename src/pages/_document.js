@@ -9,11 +9,7 @@ class AppDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <title>React boilerplate</title>
-          <meta name="description" content="React SSR boilerplate" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />
