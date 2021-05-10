@@ -1,0 +1,20 @@
+@use '../../styles/' as global;
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(auto, 5rem));
+  grid-template-rows: max-content;
+  gap: map-get(global.$padding, "sm");
+  margin: 0 auto;
+  max-width: global.$safe-zone;
+
+  @include global.bp(md) {
+    gap: map-get(global.$padding, "md");
+    grid-template-columns: repeat(8, minmax(auto, 5rem));
+  }
+
+  @include global.bp(lg) {
+    gap: map-get(global.$padding, "lg");
+    grid-template-columns: repeat(12, minmax(auto, 5rem));
+  }
+}

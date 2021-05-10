@@ -1,0 +1,23 @@
+@use '../constants/breakpoints';
+
+@mixin bp($point) {
+  @if $point == sm {
+    @content;
+  } @else if $point == sm-only {
+    @media #{breakpoints.$sm-only} {
+      @content;
+    }
+  } @else if $point == md {
+    @media #{breakpoints.$md} {
+      @content;
+    }
+  } @else if $point == lg {
+    @media #{breakpoints.$lg} {
+      @content;
+    }
+  } @else if $point == xl {
+    @media #{breakpoints.$xl} {
+      @content;
+    }
+  }
+}
