@@ -6,6 +6,7 @@ module.exports = {
     "jest/globals": true,
   },
   extends: ["plugin:react/recommended", "airbnb", "prettier"],
+  parser: "@babel/eslint-parser",
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -30,6 +31,8 @@ module.exports = {
       alias: {
         map: [
           ["@/components/*", "src/components/*"],
+          ["@utils/*", "src/utils/*"],
+          ["@models/*", "src/models/*"],
           ["@styles/*", "styles/*"],
         ],
       },
