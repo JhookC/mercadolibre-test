@@ -25,4 +25,14 @@ module.exports = {
     "jest/prefer-to-have-length": "warn",
     "jest/valid-expect": "error",
   },
+  settings: {
+    "import/resolver": {
+      alias: {
+        map: [
+          ["@/components/*", "src/components/*"],
+          ["@styles/*", "styles/*"],
+        ],
+      },
+    },
+  },
 }
