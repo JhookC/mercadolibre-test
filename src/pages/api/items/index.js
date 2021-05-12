@@ -38,6 +38,7 @@ export default (req, res) => {
       searchResults
         .setAuthor({ name: "Jeffrey", lastname: "Hooker" })
         .setItems({ items })
+        .limitResults({ maxResults: 4 })
         .deleteRefCategories()
 
       return fetcher({ url: `/categories/${mostPopularCategory[0]}` })

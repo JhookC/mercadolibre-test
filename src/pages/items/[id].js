@@ -12,7 +12,7 @@ const Id = (props) => {
   return (
     <>
       <Head>
-        <title>MercadoLibre - {item.title}</title>
+        <title>Mercadolibre Test - {item.title}</title>
       </Head>
       <Header />
       <Grid>

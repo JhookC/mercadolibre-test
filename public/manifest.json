@@ -4,8 +4,8 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "React boilerplate",
-  "short_name": "RBP",
+  "name": "Mercadolibre Test",
+  "short_name": "Mercadolibre Test",
   "icons": [
     {
       "src": "/images/icons/icon-192x192.png",

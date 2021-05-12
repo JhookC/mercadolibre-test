@@ -30,6 +30,11 @@ class Items {
     }
   }
 
+  limitResults({ maxResults }) {
+    this.items = this.items.slice(0, maxResults)
+    return this
+  }
+
   getRefCategories() {
     return this.categoriesRef
   }
