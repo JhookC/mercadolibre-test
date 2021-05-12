@@ -1,0 +1,25 @@
+@use '../../../styles/' as global;
+
+.breadcrumb {
+  padding: 1rem 0;
+  grid-column: 2/12;
+
+  .container {
+    display: inline-block;
+
+    &:last-of-type {
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  span {
+    color: global.$breadcrumb-color;
+    font-size: global.$fz-14;
+  }
+
+  .separator {
+    margin: 0 0.5rem;
+  }
+}

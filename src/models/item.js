@@ -2,11 +2,12 @@
 import Price from "@models/price"
 
 class Item {
-  constructor({ id, title, picture, condition, freeShipping }) {
+  constructor({ id, title, picture, condition, stateName, freeShipping }) {
     this.id = id
     this.title = title
     this.picture = picture
     this.condition = condition
+    this.stateName = stateName
     this.free_shipping = freeShipping
   }
 

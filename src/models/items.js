@@ -16,6 +16,11 @@ class Items {
     return this
   }
 
+  setCategories({ categories }) {
+    this.categories = categories
+    return this
+  }
+
   followCategories({ id }) {
     if (!this.categoriesRef.has(id)) {
       this.categoriesRef.set(id, 1)
@@ -25,10 +30,12 @@ class Items {
     }
   }
 
-  setCategories() {
-    this.categories = [...this.categoriesRef.keys()]
+  getRefCategories() {
+    return this.categoriesRef
+  }
+
+  deleteRefCategories() {
     delete this.categoriesRef
-    return this
   }
 }
 

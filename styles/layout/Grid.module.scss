@@ -4,17 +4,18 @@
   display: grid;
   grid-template-columns: repeat(6, minmax(auto, 5rem));
   grid-template-rows: max-content;
-  gap: map-get(global.$padding, "sm");
+  gap: 0 global.$small-space;
   margin: 0 auto;
   max-width: global.$safe-zone;
+  align-items: center;
 
   @include global.bp(md) {
-    gap: map-get(global.$padding, "md");
+    gap: 0 global.$big-space;
     grid-template-columns: repeat(8, minmax(auto, 5rem));
   }
 
   @include global.bp(lg) {
-    gap: map-get(global.$padding, "lg");
+    gap: 0 global.$extra-space;
     grid-template-columns: repeat(12, minmax(auto, 5rem));
   }
 }
