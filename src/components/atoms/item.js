@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable import/no-unresolved */
 import { useRouter } from "next/router"
-import styles from "@styles/components/atoms/Item.module.scss"
+import styles from "@styles/components/atoms/item.module.scss"
 import Image from "@/components/atoms/image"
 
 const Item = (props) => {
