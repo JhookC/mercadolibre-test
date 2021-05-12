@@ -8,8 +8,8 @@ const Image = (props) => {
   return (
     <NextImage
       className={styles.image}
-      src={`${src}_1x.png`}
-      srcSet={`${src}_2x.png 2x`}
+      src={src.startsWith("http") ? src : `${src}_1x.png`}
+      /* srcSet={`${src}_2x.png 2x`} */
       alt={alt}
       width={width}
       height={height}

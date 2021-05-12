@@ -4,11 +4,11 @@ import Image from "@/components/atoms/image"
 import styles from "@styles/components/molecules/search-bar.module.scss"
 
 const SearchBar = () => (
-  <form className={styles["search-bar"]}>
+  <form className={styles["search-bar"]} action="/items" method="get">
     <SearchInput
       type="text"
       name="search"
-      label=""
+      label="search"
       placeholder="Nunca dejes de buscar"
     />
     <button className={styles.btn} aria-label="Buscar" type="submit">

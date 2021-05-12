@@ -8,8 +8,8 @@ class Fetcher {
       Object.defineProperty(this, "fetch", {
         writable: false,
         configurable: false,
-        value: ({ url, method = "GET", params }) =>
-          fetch(Fetcher.baseUrl.concat(url), {
+        value: ({ url, method = "GET", params, isUrlAbsolute = false }) =>
+          fetch(isUrlAbsolute ? url : Fetcher.baseUrl.concat(url), {
             method,
             body: JSON.stringify(params),
           }).then(async (res) => {

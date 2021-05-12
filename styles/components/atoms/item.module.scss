@@ -1,0 +1,59 @@
+@use '../../../styles/' as global;
+
+.item {
+  cursor: pointer;
+  border-top: 1px solid global.$background-color;
+  padding: global.$small-space 0 global.$small-space global.$small-space;
+}
+
+.container {
+  display: flex;
+}
+
+.image {
+  border-radius: 0.25rem;
+  object-fit: contain;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-left: global.$small-space;
+}
+
+.status {
+  align-items: center;
+  display: flex;
+  margin-top: global.$small-space;
+
+  /* @include md {
+    margin: global.$small-space 0 global.$big-space;
+  } */
+
+  .values {
+    align-items: center;
+    display: flex;
+    flex-basis: 70%;
+
+    /* @include md {
+      flex-basis: 80%;
+    } */
+
+    .title {
+      font-size: global.$fz-24;
+      margin-right: global.$small-space/2;
+    }
+  }
+
+  .state {
+    color: global.$breadcrumb-color;
+    font-size: global.$fz-12;
+  }
+}
+
+.description {
+  font-size: global.$fz-18;
+  margin-top: global.$big-space;
+  max-width: 100%;
+}

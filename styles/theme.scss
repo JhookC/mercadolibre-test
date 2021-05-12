@@ -1,6 +1,32 @@
+// Max width for content
 $safe-zone: 1440px;
-$padding: (
-  "sm": 1rem,
-  "md": 2rem,
-  "lg": 2.5rem,
-);
+
+//  Font sizes
+$fz-12: 0.75rem;
+$fz-14: 0.875rem;
+$fz-16: 1rem;
+$fz-18: 1.125rem;
+$fz-24: 1.5rem;
+$fz-28: 1.75rem;
+$fz-46: 2.875rem;
+
+//  Colors
+$primary-color: #ffe600;
+$secondary-color: #999999;
+$background-color: #eeeeee;
+$font-color: #333333;
+$breadcrumb-color: #666666;
+$cta-color: #3483fa;
+$white: #ffffff;
+
+//  Spacing
+$small-space: 1rem;
+$big-space: 2rem;
+$extra-space: 2.5rem;
+
+// Backgrounds
+.bkgd {
+  &--white {
+    background-color: #ffffff;
+  }
+}

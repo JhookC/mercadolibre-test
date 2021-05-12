@@ -1,4 +1,6 @@
+@use '../../styles/' as global;
+
 .header {
-  background-color: #ffe600;
-  padding: 0.5rem 1rem;
+  background-color: global.$primary-color;
+  padding: 0.7rem 1rem;
 }

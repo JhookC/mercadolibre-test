@@ -5,41 +5,61 @@ import fetcher from "@utils/fetcher"
 
 export default (req, res) => {
   const { query } = req
-  const { q } = query
+  const { search } = query
+  const searchResults = new Items()
 
-  const url = `/sites/MLA/search?q=${q}`
+  return fetcher({ url: `/sites/MLA/search?q=${search}` })
+    .then((data) => {
+      const { results } = data
 
-  return fetcher({ url }).then((data) => {
-    const { results } = data
+      const items = results.map((item) => {
+        searchResults.followCategories({ id: item.category_id })
 
-    const searchResults = new Items()
+        const newItem = new Item({
+          id: item.id,
+          title: item.title,
+          picture: item.thumbnail,
+          condition: item.condition,
+          stateName: item.address.state_name,
+          freeShipping: item.shipping.free_shipping,
+        })
 
-    const items = results.map((item) => {
-      searchResults.followCategories({ id: item.category_id })
+        const priceDetailed = item.price.toString().split(".")
+        newItem.setPrice({
+          currency: item.currency_id,
+          amount: Number(priceDetailed[0]),
+          decimals: Number(priceDetailed[1]) || 0,
+        })
 
-      const newItem = new Item({
-        id: item.id,
-        title: item.title,
-        picture: item.thumbnail,
-        condition: item.condition,
-        freeShipping: item.shipping.free_shipping,
+        return newItem
       })
 
-      const priceDetailed = item.price.toString().split(".")
-      newItem.setPrice({
-        currency: item.currency_id,
-        amount: Number(priceDetailed[0]),
-        decimals: Number(priceDetailed[1]) || 0,
-      })
+      const mostPopularCategory = [
+        ...searchResults.getRefCategories().entries(),
+      ].reduce((a, e) => (e[1] > a[1] ? e : a))
 
-      return newItem
+      /* const searchCategory = filters
+        .find((elem) => elem.id === "category")
+        .values[0].path_from_root.map((category) => category.name) */
+
+      searchResults
+        .setAuthor({ name: "Jeffrey", lastname: "Hooker" })
+        .setItems({ items })
+        .deleteRefCategories()
+
+      return fetcher({ url: `/categories/${mostPopularCategory[0]}` })
     })
+    .then((data) => {
+      // eslint-disable-next-line camelcase
+      const { path_from_root } = data
 
-    searchResults
-      .setAuthor({ name: "Jeffrey", lastname: "Hooker" })
-      .setItems({ items })
-      .setCategories()
+      if (path_from_root.length > 0) {
+        searchResults.setCategories({
+          categories: path_from_root.map((category) => category.name),
+        })
+      }
 
-    return res.status(200).json(searchResults)
-  })
+      return res.status(200).json(searchResults)
+    })
+    .catch(() => res.status(500).json("Error..."))
 }
