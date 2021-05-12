@@ -4,7 +4,7 @@ import Header from "@/components/Header"
 import Breadcrumb from "@/components/atoms/breadcrumb"
 import ResultWrapper from "@/components/molecules/results-wrapper"
 import Grid from "src/layout/Grid"
-import fetcher from "@utils/fetcher"
+import { fetcher } from "@utils/fetcher"
 
 const Index = (props) => {
   const { search, items, categories } = props

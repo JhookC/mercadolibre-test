@@ -4,7 +4,7 @@ import Header from "@/components/Header"
 import Breadcrumb from "@/components/atoms/breadcrumb"
 import ItemDetails from "@/components/organism/ItemDetails"
 import Grid from "src/layout/Grid"
-import fetcher from "@utils/fetcher"
+import { fetcher } from "@utils/fetcher"
 
 const Id = (props) => {
   const { item, categories } = props

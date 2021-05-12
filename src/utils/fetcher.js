@@ -9,10 +9,15 @@ class Fetcher {
         writable: false,
         configurable: false,
         value: ({ url, method = "GET", params, isUrlAbsolute = false }) =>
-          fetch(isUrlAbsolute ? url : Fetcher.baseUrl.concat(url), {
-            method,
-            body: JSON.stringify(params),
-          }).then(async (res) => {
+          fetch(
+            isUrlAbsolute
+              ? encodeURI(url)
+              : encodeURI(Fetcher.baseUrl.concat(url)),
+            {
+              method,
+              body: JSON.stringify(params),
+            }
+          ).then(async (res) => {
             if (res.status === 500) {
               throw await res.json()
             }
@@ -29,4 +34,5 @@ class Fetcher {
 Fetcher.instance = new Fetcher()
 Object.freeze(Fetcher.instance)
 
-export default Fetcher.instance.fetch
+export const fetcher = Fetcher.instance.fetch
+export const FetcherC = Fetcher
