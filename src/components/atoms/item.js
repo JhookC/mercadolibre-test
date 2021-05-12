@@ -4,6 +4,7 @@
 import { useRouter } from "next/router"
 import styles from "@styles/components/atoms/item.module.scss"
 import Image from "@/components/atoms/image"
+import Currency from "@utils/currency.pipe"
 
 const Item = (props) => {
   const router = useRouter()
@@ -25,7 +26,7 @@ const Item = (props) => {
         <div className={styles.info}>
           <div className={styles.status}>
             <div className={styles.values}>
-              <h2 className={styles.title}>$ {data.price.amount}</h2>
+              <h2 className={styles.title}>{Currency(data.price.amount)}</h2>
               {data.free_shipping ? (
                 <Image
                   className={styles.shipping}
@@ -36,7 +37,7 @@ const Item = (props) => {
                 />
               ) : null}
             </div>
-            <span className={styles.state}>{data.stateName}</span>
+            <span className={styles.state}>{data.state_name}</span>
           </div>
           <p className={styles.description}>{data.title}</p>
         </div>

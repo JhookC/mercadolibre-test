@@ -2,7 +2,7 @@
 import Link from "next/link"
 import Image from "@/components/atoms/image"
 import SearchBar from "@/components/molecules/search-bar"
-import styles from "@styles/components/NavBar.module.scss"
+import styles from "@styles/components/organism/NavBar.module.scss"
 import Grid from "src/layout/Grid"
 
 const NavBar = () => (

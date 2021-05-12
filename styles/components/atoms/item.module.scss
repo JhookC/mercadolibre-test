@@ -27,18 +27,10 @@
   display: flex;
   margin-top: global.$small-space;
 
-  /* @include md {
-    margin: global.$small-space 0 global.$big-space;
-  } */
-
   .values {
     align-items: center;
     display: flex;
     flex-basis: 70%;
-
-    /* @include md {
-      flex-basis: 80%;
-    } */
 
     .title {
       font-size: global.$fz-24;
