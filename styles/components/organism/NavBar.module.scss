@@ -1,0 +1,25 @@
+@use '../../../styles/' as global;
+
+.nav {
+  grid-column: span 6;
+
+  @include global.bp(md) {
+    grid-column: span 8;
+  }
+
+  @include global.bp(lg) {
+    grid-column: span 14;
+  }
+
+  .link {
+    grid-column: 1 / 4;
+
+    @include global.bp(md) {
+      grid-column: 2 / 3;
+    }
+
+    @include global.bp(lg) {
+      grid-column: 2 / 3;
+    }
+  }
+}

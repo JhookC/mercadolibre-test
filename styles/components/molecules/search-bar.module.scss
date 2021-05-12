@@ -1,0 +1,30 @@
+@use '../../../styles/' as global;
+
+.search-bar {
+  background-color: global.$white;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-grow: 1;
+  grid-column: 4 / 7;
+
+  @include global.bp(md) {
+    grid-column: 3/ 8;
+  }
+
+  @include global.bp(lg) {
+    grid-column: 3 / 12;
+  }
+
+  .btn {
+    background-color: global.$background-color;
+    border: 0;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    padding: 0 0.5rem;
+    width: 2.5rem;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@use '../../../styles/' as global;
+
+.list {
+  grid-column: 2/10;
+
+  @include global.bp(md) {
+    grid-column: 2/9;
+  }
+
+  @include global.bp(lg) {
+    grid-column: 2/12;
+  }
+}

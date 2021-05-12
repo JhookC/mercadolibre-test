@@ -8,4 +8,7 @@ module.exports = withPWA({
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
+  images: {
+    domains: ["http2.mlstatic.com"],
+  },
 })

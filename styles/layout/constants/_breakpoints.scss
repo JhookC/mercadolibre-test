@@ -1,0 +1,33 @@
+// Media Query breakpoints
+
+// Values
+$sm-max-width: 599px !default;
+$md-max-width: 1023px !default;
+$lg-max-width: 1439px !default;
+
+// Small breakpoint
+$sm-only: "(max-width: #{$sm-max-width})" !default;
+
+// Medium breakpoints
+$md: "(min-width: #{$sm-max-width + 1})" !default;
+$md-only: "(min-width: #{$sm-max-width + 1}) and (max-width: #{$md-max-width})" !default;
+$md-max: "(max-width: #{$md-max-width})" !default;
+
+// Large breakpoints
+$lg: "(min-width: #{$md-max-width + 1})" !default;
+$lg-only: "(min-width: #{$md-max-width + 1}) and (max-width: #{$lg-max-width})" !default;
+$lg-max: "(max-width: #{$lg-max-width})" !default;
+
+// Extra Large breakpoints
+$xl: "(min-width: #{$lg-max-width + 1})" !default;
+
+$breakpoints--values: (
+  "sm-only": $sm-only,
+  "md": $md,
+  "md-only": $md-only,
+  "md-max": $md-max,
+  "lg": $lg,
+  "lg-only": $lg-only,
+  "lg-max": $lg-max,
+  "xl": $xl,
+);

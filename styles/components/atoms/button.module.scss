@@ -1,0 +1,16 @@
+@use '../../../styles/' as global;
+
+.button {
+  background-color: global.$cta-color;
+  border: 0;
+  border-radius: 0.25rem;
+  color: global.$white;
+  max-width: 12.5rem;
+  padding: global.$small-space/2;
+  width: 100%;
+  margin-top: global.$big-space;
+
+  &:focus {
+    outline: 0;
+  }
+}

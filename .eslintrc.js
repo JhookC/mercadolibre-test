@@ -6,6 +6,7 @@ module.exports = {
     "jest/globals": true,
   },
   extends: ["plugin:react/recommended", "airbnb", "prettier"],
+  parser: "@babel/eslint-parser",
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -24,5 +25,17 @@ module.exports = {
     "jest/no-identical-title": "error",
     "jest/prefer-to-have-length": "warn",
     "jest/valid-expect": "error",
+  },
+  settings: {
+    "import/resolver": {
+      alias: {
+        map: [
+          ["@/components/*", "src/components/*"],
+          ["@utils/*", "src/utils/*"],
+          ["@models/*", "src/models/*"],
+          ["@styles/*", "styles/*"],
+        ],
+      },
+    },
   },
 }
