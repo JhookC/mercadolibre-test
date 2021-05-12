@@ -13,7 +13,7 @@ function App({ Component, pageProps }) {
         />
         <meta name="description" content="Description" />
         <meta name="theme-color" content="#404749" />
-        <title>React boilerplate</title>
+        <title>Mercadolibre Test</title>
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/images/icons/apple-icon.png" />
       </Head>

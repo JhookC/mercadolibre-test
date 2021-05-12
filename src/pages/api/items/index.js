@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import Items from "@models/items"
 import Item from "@models/item"
-import fetcher from "@utils/fetcher"
+import { fetcher } from "@utils/fetcher"
 
 export default (req, res) => {
   const { query } = req
@@ -38,6 +38,7 @@ export default (req, res) => {
       searchResults
         .setAuthor({ name: "Jeffrey", lastname: "Hooker" })
         .setItems({ items })
+        .limitResults({ maxResults: 4 })
         .deleteRefCategories()
 
       return fetcher({ url: `/categories/${mostPopularCategory[0]}` })
