@@ -1,0 +1,64 @@
+@use '../../../styles/' as global;
+
+.description {
+  grid-column: 2/10;
+  background-color: global.$white;
+  border-radius: 0.25rem;
+  margin: 0 auto global.$big-space auto;
+
+  @include global.bp(md) {
+    grid-column: 2/9;
+  }
+
+  @include global.bp(lg) {
+    grid-column: 2/12;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: global.$big-space global.$big-space 0 global.$big-space;
+
+    @include global.bp(md) {
+      flex-direction: row;
+    }
+  }
+
+  .image {
+    object-fit: contain;
+  }
+
+  .info {
+    @include global.bp(md) {
+      padding-left: global.$big-space;
+    }
+
+    .eyebrow {
+      font-size: global.$fz-14;
+    }
+
+    .title {
+      font-size: global.$fz-24;
+      margin-top: global.$small-space;
+    }
+
+    .price {
+      font-size: global.$fz-46;
+      margin-top: global.$big-space;
+    }
+  }
+
+  .product_description {
+    padding: 0 global.$big-space global.$big-space global.$big-space;
+
+    .description_title {
+      font-size: global.$fz-28;
+    }
+
+    .description_text {
+      color: global.$breadcrumb-color;
+      font-size: 1rem;
+      margin-top: global.$big-space;
+    }
+  }
+}

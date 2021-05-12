@@ -5,10 +5,10 @@ import fetcher from "@utils/fetcher"
 
 export default (req, res) => {
   const { query } = req
-  const { search } = query
+  const { q } = query
   const searchResults = new Items()
 
-  return fetcher({ url: `/sites/MLA/search?q=${search}` })
+  return fetcher({ url: `/sites/MLA/search?q=${q}` })
     .then((data) => {
       const { results } = data
 
@@ -20,16 +20,9 @@ export default (req, res) => {
           title: item.title,
           picture: item.thumbnail,
           condition: item.condition,
-          stateName: item.address.state_name,
-          freeShipping: item.shipping.free_shipping,
-        })
-
-        const priceDetailed = item.price.toString().split(".")
-        newItem.setPrice({
-          currency: item.currency_id,
-          amount: Number(priceDetailed[0]),
-          decimals: Number(priceDetailed[1]) || 0,
-        })
+          state_name: item.address.state_name,
+          free_shipping: item.shipping.free_shipping,
+        }).setPrice({ currency: item.currency_id, amount: item.price })
 
         return newItem
       })

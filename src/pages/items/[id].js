@@ -2,22 +2,22 @@
 import Head from "next/head"
 import Header from "@/components/Header"
 import Breadcrumb from "@/components/atoms/breadcrumb"
-import ResultWrapper from "@/components/molecules/results-wrapper"
+import ItemDetails from "@/components/organism/ItemDetails"
 import Grid from "src/layout/Grid"
 import fetcher from "@utils/fetcher"
 
-const Index = (props) => {
-  const { search, items, categories } = props
+const Id = (props) => {
+  const { item, categories } = props
 
   return (
     <>
       <Head>
-        <title>MercadoLibre - {search}</title>
+        <title>MercadoLibre - {item.title}</title>
       </Head>
       <Header />
       <Grid>
         <Breadcrumb data={categories} />
-        <ResultWrapper items={items} />
+        <ItemDetails data={item} />
       </Grid>
     </>
   )
@@ -25,17 +25,16 @@ const Index = (props) => {
 
 export async function getServerSideProps(context) {
   const data = await fetcher({
-    url: `http://${context.req.headers.host}/api/items?q=${context.query.search}`,
+    url: `http://${context.req.headers.host}/api/items/${context.query.id}`,
     isUrlAbsolute: true,
   })
 
   return {
     props: {
-      search: context.query.search,
-      items: data.items,
+      item: data.item,
       categories: data.categories,
     },
   }
 }
 
-export default Index
+export default Id
