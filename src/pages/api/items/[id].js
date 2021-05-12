@@ -1,6 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import Item from "@models/item"
-import fetcher from "@utils/fetcher"
+import { fetcher } from "@utils/fetcher"
 
 export default (req, res) => {
   const {
