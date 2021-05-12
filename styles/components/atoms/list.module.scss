@@ -2,6 +2,7 @@
 
 .list {
   grid-column: 2/10;
+  margin-bottom: 2rem;
 
   @include global.bp(md) {
     grid-column: 2/9;
