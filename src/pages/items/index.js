@@ -12,7 +12,7 @@ const Index = (props) => {
   return (
     <>
       <Head>
-        <title>MercadoLibre - {search}</title>
+        <title>MercadoLibre Test - {search}</title>
       </Head>
       <Header />
       <Grid>
